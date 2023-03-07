@@ -12,7 +12,7 @@ switch($action) {
             header('location: ?controller='.$controller.'');
             ; break;
         case 'edit':
-            require_once('Views/User/edit_user.php');
+            require_once('Model/User/user_model.php');
         case 'update':
             require_once('Model/User/user_model.php');
             header('location: ?controller='.$controller.'');

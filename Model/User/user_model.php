@@ -25,7 +25,7 @@ function store() {
 function edit() {
     $id = $_GET['id'];
     include_once('Config/connect.php');
-    $sql = "SELECT * FROM user WHERE id = $id";
+    $sql = "SELECT * FROM user WHERE id = ".$id."";
     $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
