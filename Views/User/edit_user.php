@@ -11,7 +11,7 @@
 
 <div class="container">
 <form method="post" action="?controller=<?= $controller ?>&action=update">
-    <?php if(isset($errorr)) { echo $errorr; } ?>
+    <!-- <?php if(isset($errorr)) { echo $errorr; } ?> -->
     <h1 align="center">Edit User</h1>
   <div class="mb-3">
     <label for="username" class="form-label">Username</label>
