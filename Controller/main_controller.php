@@ -5,7 +5,14 @@ $controller = $_GET['controller'] ?? '';
 $action = $_GET['action'] ?? '';
 // Gọi chức năng cho Client
 switch($controller) {
+    case 'login': require_once('Login/login_controller.php');
     case 'user' : require_once('User/user_controller.php'); break;
     case 'product' : require_once('Product/product_controller.php'); break;
+    case '': if(isset($_SESSION['username']) && isset($_SESSION['password'])) {
+        require_once('Views/index.php');
+    } else {
+        header('location:?controller=login&action=login');
+    }
+    ; break;
 }
 ?>
