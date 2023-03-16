@@ -10,7 +10,7 @@
 <body>
 
 <div><a class="btn btn-success mt-5" href="?controller=<?= $controller ?>&action=create">+ Add User</a></div>
-<div><a class="btn btn-info mt-5" href="?controller=<?= $controller ?>&action=login">Logout</a></div>
+<div><a class="btn btn-info mt-5" href="?controller=<?= $controller ?>&action=logout">Logout</a></div>
 
 <h1 align="center">User List</h1>
 <table class="table table-hover">
