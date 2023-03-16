@@ -33,9 +33,11 @@ if(isset($_POST['sbm'])) {
 	<div class="row">
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
-				<div class="panel-heading">Online Laptop Store - Administrator</div>
+				<div class="panel-heading" align="center">
+                    <b>Online Laptop Store</b>
+                    <p>Administrator Login</p>
+                </div>
 				<div class="panel-body">
-
 					<form role="form" method="post" action="index.php?controller=login&action=checklogin">
 						<fieldset>
                         <div class="form-group">
@@ -47,9 +49,9 @@ if(isset($_POST['sbm'])) {
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password..." required>
                         </div>
 							<div class="checkbox">
-								<label>
+								<!-- <label>
 									<input name="remember" type="checkbox" value="Remember Me">Remember
-								</label>
+								</label> -->
 							</div>
 							<button type="submit" class="btn btn-primary" name="sbm">Login</button>
 						</fieldset>

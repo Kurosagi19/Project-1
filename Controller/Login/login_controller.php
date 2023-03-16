@@ -14,5 +14,9 @@ switch($action) {
             include_once('Views/login-logout/login.php');
         }
         ; break;
+        case 'logout':
+            session_destroy();
+            header('location: index.php');
+            ; break;
 }
 ?>
