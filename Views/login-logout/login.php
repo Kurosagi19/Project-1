@@ -36,7 +36,7 @@ if(isset($_POST['sbm'])) {
 				<div class="panel-heading">Online Laptop Store - Administrator</div>
 				<div class="panel-body">
 
-					<form role="form" method="post">
+					<form role="form" method="post" action="index.php?controller=login&action=checklogin">
 						<fieldset>
                         <div class="form-group">
                             <label for="username" class="form-label">Username</label>
