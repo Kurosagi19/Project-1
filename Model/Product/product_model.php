@@ -1,0 +1,59 @@
+<?php
+function index() {
+    include_once('Config/connect.php');
+    $record = mysqli_query($connect, "SELECT * FROM product ORDER BY id DESC");
+    include_once('Config/close_connect.php');
+    return $record;
+}
+function store() {
+    include_once('Config/connect.php');
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $description = $_POST['description'];
+    if(isset($_POST['featured'])) {
+        $featured = 1;
+    } else {
+        $featured = 0;
+    }
+    $file_name = $_FILES['image']['name'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $sql = "INSERT INTO product (name, price, image, quantity, featured, description)
+    VALUES ('$name', $price, '$image', $quantity, $featured, '$description')";
+    mysqli_query($connect, $sql);
+    move_uploaded_file($file_tmp, 'Images/'.$image);
+    include_once('Config/close_connect.php');
+}
+function edit() {
+    $id = $_GET['id'];
+    include_once('Config/connect.php');
+    $query = mysqli_query($connect, "SELECT * FROM product WHERE id = '$id'");
+    include_once('Config/close_connect.php');
+    return $query;
+}
+function update() {
+    $id = $_GET['id'];
+    include_once('Config/connect.php');
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    $description = $_POST['description'];
+    if(isset($_POST['featured'])) {
+        $featured = 1;
+    } else {
+        $featured = 0;
+    }
+    $file_name = $_FILES['image']['name'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $sql = "UPDATE product SET name = $name, price = $price, quantity = $quantity, description = $description, featured = $featured, image = $image WHERE id = '$id'";
+    mysqli_query($connect, $sql);
+    move_uploaded_file($file_tmp, 'Images/'.$image);
+    include_once('Config/close_connect.php');
+}
+
+switch($action) {
+    case '': $record = index(); break;
+    case 'store': store(); break;
+    case 'edit': $record = edit(); break;
+}
+?>
