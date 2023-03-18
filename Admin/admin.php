@@ -49,7 +49,7 @@
         <ul class="nav menu">
 			<li class="active"><a href="admin.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li><a href="user.php"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>User Management</a></li>
-			<li><a href="category.php"><svg class="glyph stroked open folder"><use xlink:href="#stroked-open-folder"/></svg>Category Management</a></li>
+			<li><a href="?controller=product"><svg class="glyph stroked open folder"><use xlink:href="#stroked-open-folder"/></svg>Category Management</a></li>
 			<li><a href="product.php"><svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>Product Management</a></li>
 			<!-- <li><a href="#"><svg class="glyph stroked two messages"><use xlink:href="#stroked-two-messages"/></svg> Commends Management</a></li>
             <li><a href="#"><svg class="glyph stroked chain"><use xlink:href="#stroked-chain"/></svg> Ads Management</a></li>
