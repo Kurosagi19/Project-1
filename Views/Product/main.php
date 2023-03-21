@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 align="center">Product List</h1>
-    <a href="?controller=product&action=create class="btn btn-success mb-3">+ Add Product</a>
+    <a href="?controller=product&action=create" class="btn btn-success mb-3">+ Add Product</a>
     <table class="table">
   <thead>
     <tr>
@@ -23,11 +23,14 @@
     </tr>
   </thead>
   <tbody>
-    <?php
-    foreach($record as $item) {
-        ?>
     <tr>
-      <th scope="row"><?= $stt; ?></th>
+      <?php
+      $stt = 1;
+      foreach($record as $item) {
+      ?>
+    </tr>
+    <tr>
+      <th scope="row"><?= $stt ?></th>
       <td><?= $item['name']; ?></td>
       <td><?= number_format($item['price']); ?></td>
       <td><?= $item['quantity']; ?></td>
@@ -38,7 +41,7 @@
         echo '<td>Non-Featured</td>';
       }
       ?>
-      <td><img src="Images/<?= $item['image'] ?>"</td>
+      <td><img src="Images/<?= $item['image'] ?>"></td>
       <td><a href="?controller=product&action=edit&id=<?= $item['id'] ?>" class="btn btn-info">Edit</a></td>
       <td><a onClick="confirm('Are you sure you want delete this product ?')" href="?controller=product&action=delete&id=<?= $item['id'] ?>" class="btn btn-danger">Delete</a></td>
     </tr>

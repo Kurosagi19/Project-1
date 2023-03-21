@@ -1,7 +1,8 @@
 <?php
 function index() {
     include_once('Config/connect.php');
-    $record = mysqli_query($connect, "SELECT * FROM product ORDER BY id DESC");
+    $sql = "SELECT * FROM product";
+    $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
 }
@@ -32,8 +33,8 @@ function edit() {
     return $query;
 }
 function update() {
-    $id = $_GET['id'];
     include_once('Config/connect.php');
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
@@ -43,11 +44,22 @@ function update() {
     } else {
         $featured = 0;
     }
-    $file_name = $_FILES['image']['name'];
-    $file_tmp = $_FILES['image']['tmp_name'];
-    $sql = "UPDATE product SET name = $name, price = $price, quantity = $quantity, description = $description, featured = $featured, image = $image WHERE id = '$id'";
+    $arr = mysqli_fetch_array(mysqli_query($connect, "SELECT image FROM product WHERE id = '$id'"));
+    if($_FILES['image']['name'] == '') {
+        $image = $arr['image'];
+    } else {
+        $image = $_FILES['image']['name'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+        move_uploaded_file($file_tmp, 'Images/'.$image);
+    }
+    $sql = "UPDATE product SET name = '$name', price = $price, quantity = $quantity, description = '$description', featured = $featured, image = '$image' WHERE id = '$id'";
     mysqli_query($connect, $sql);
-    move_uploaded_file($file_tmp, 'Images/'.$image);
+    include_once('Config/close_connect.php');
+}
+function delete() {
+    $id = $_GET['id'];
+    include_once('Config/connect.php');
+    mysqli_query($connect, "DELETE FROM product WHERE id = '$id'");
     include_once('Config/close_connect.php');
 }
 
@@ -55,5 +67,7 @@ switch($action) {
     case '': $record = index(); break;
     case 'store': store(); break;
     case 'edit': $record = edit(); break;
+    case 'update': update(); break;
+    case 'delete': delete(); break;
 }
 ?>
