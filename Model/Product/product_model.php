@@ -17,7 +17,7 @@ function store() {
     } else {
         $featured = 0;
     }
-    $file_name = $_FILES['image']['name'];
+    $image = $_FILES['image']['name'];
     $file_tmp = $_FILES['image']['tmp_name'];
     $sql = "INSERT INTO product (name, price, image, quantity, featured, description) 
     VALUES ('$name', $price, '$image', $quantity, $featured, '$description')";

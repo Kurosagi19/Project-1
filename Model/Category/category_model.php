@@ -16,7 +16,8 @@ function store() {
 function edit() {
     $catid = $_GET['catid'];
     include_once('Config/connect.php');
-    $record = mysqli_query($connect, "SELECT * FROM category WHERE catid = '$catid'");
+    $sql = "SELECT * FROM category WHERE catid = '$catid'";
+    $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
 }

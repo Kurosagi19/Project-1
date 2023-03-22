@@ -15,10 +15,10 @@
     <h1 align="center">Edit Category</h1>
     <div class="container">
         <?php foreach($record as $item) { ?>
-    <form method="post" enctype="multipart/form-data" action="?controller=category&action=edit">
+    <form method="post" action="?controller=category&action=edit">
     <div class="mb-3">
-        <label for="name" class="form-label">Product name: </label>
-        <input type="text" class="form-control" id="name" name="name">
+        <label for="name" class="form-label">Category name: </label>
+        <input type="text" class="form-control" id="catname" name="catname">
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-warning">Reset</button>

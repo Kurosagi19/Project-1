@@ -10,6 +10,7 @@ switch($action) {
         require_once('Model/Login/login_model.php');
         if(isset($check)) {
             header('location: index.php');
+            header('location: index.php?controller=admin');
         } else {
             include_once('Views/login-logout/login.php');
         }
@@ -17,6 +18,7 @@ switch($action) {
         case 'logout':
             session_destroy();
             header('location: index.php');
+            header('location: index?controller=admin');
             ; break;
 }
 ?>
