@@ -5,20 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Product Management</title>
+    <title>Category Management</title>
 </head>
 <body>
-    <h1 align="center">Product List</h1>
-    <a href="?controller=product&action=create" class="btn btn-success mb-3">+ Add Product</a>
+    <h1 align="center">Category List</h1>
+    <a href="?controller=category&action=create" class="btn btn-success mb-3">+ Add Category</a>
     <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Status</th>
-      <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -31,19 +27,9 @@
     </tr>
     <tr>
       <th scope="row"><?= $stt ?></th>
-      <td><?= $item['name']; ?></td>
-      <td><?= number_format($item['price']); ?></td>
-      <td><?= $item['quantity']; ?></td>
-      <?php
-      if($item['featured'] == 1) {
-        echo '<td class="text-danger">Featured</td>';
-      } else {
-        echo '<td>Non-Featured</td>';
-      }
-      ?>
-      <td><img src="Images/<?= $item['image'] ?>"></td>
-      <td><a href="?controller=product&action=edit&id=<?= $item['id'] ?>" class="btn btn-info">Edit</a></td>
-      <td><a onClick="confirm('Are you sure you want delete this product ?')" href="?controller=product&action=delete&id=<?= $item['id'] ?>" class="btn btn-danger">Delete</a></td>
+      <td><?= $item['catname']; ?></td>
+      <td><a href="?controller=category&action=edit&id=<?= $item['catid'] ?>" class="btn btn-info">Edit</a></td>
+      <td><a onClick="confirm('Are you sure you want delete this category ? Every product in this category will also be deleted !')" href="?controller=category&action=delete&id=<?= $item['catid'] ?>" class="btn btn-danger">Delete</a></td>
     </tr>
     <?php $stt++; } ?>
   </tbody>
