@@ -7,8 +7,8 @@
                         ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 mx-product">
                             <div class="product-item card text-center">
-                                <a href="#"><img src="images/<?= $item['image'] ?>"></a>
-                                <h4><a href="#"><?= $item['name'] ?></a></h4>
+                                <a href="?redirect=product&id=<?= $item['id'] ?>"><img src="images/<?= $item['image'] ?>"></a>
+                                <h4><a href="?redirect=product&id=<?= $item['id'] ?>"><?= $item['name'] ?></a></h4>
                                 <p>Giá Bán: <span><?= number_format($item['price']); ?>đ</span></p>
                             </div>
                         </div>
@@ -27,8 +27,8 @@
                         ?>
                         <div class="col-lg-4 col-md-6 col-sm-12 mx-product">
                             <div class="product-item card text-center">
-                                <a href="#"><img src="images/<?= $item['image'] ?>"></a>
-                                <h4><a href="#"><?= $item['name'] ?></a></h4>
+                                <a href="?redirect=product&id=<?= $item['id'] ?>"><img src="images/<?= $item['image'] ?>"></a>
+                                <h4><a href="?redirect=product&id=<?= $item['id'] ?>"><?= $item['name'] ?></a></h4>
                                 <p>Giá Bán: <span><?= number_format($item['price']); ?>đ</span></p>
                             </div>
                         </div>
