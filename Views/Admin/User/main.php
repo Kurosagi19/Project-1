@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<div><a class="btn btn-success mt-5" href="?controller=<?= $controller ?>&action=create">+ Add User</a></div>
-<div><a class="btn btn-info mt-5" href="?controller=<?= $controller ?>&action=logout">Logout</a></div>
+<a href="?controller=admin" class="btn btn-info">Home Page</a>
+<div><a class="btn btn-success m-5" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=create">+ Add User</a></div>
 
 <h1 align="center">User List</h1>
 <table class="table table-hover">
@@ -33,9 +33,8 @@
       <th scope="row"><?= $stt ?></th>
       <td><?= $item['username'] ?></td>
       <td><?= $item['fullname'] ?></td>
-      <td><a href="?controller=<?= $controller ?>=edit&id=<?=$item['id'] ?>" class="btn btn-info">Edit</a></td>
-      <td><a href="?controller=<?= $controller ?>=del&id=<?=$item['id'] ?>" class="btn btn-danger">Delete</a></td>
-      <!-- <td><a href="?controller=<?= $controller ?>=res&id=<?=$item['id'] ?>" class="btn btn-warning">Reset</a></td> -->
+      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&id=<?= $item['id'] ?>" class="btn btn-info mr-2">Edit</a></td>
+      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&id=<?= $item['id'] ?>" class="btn btn-danger mr-2">Delete</a></td>
     </tr>
     <?php
     $stt++;

@@ -11,7 +11,7 @@
 <body>
     <h1 align="center">Add Product</h1>
     <div class="container">
-    <form method="post" enctype="multipart/form-data" action="?controller=product&action=store">
+    <form method="post" enctype="multipart/form-data" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=store">
     <div class="mb-3">
         <label for="name" class="form-label">Product name: </label>
         <input type="text" class="form-control" id="name" name="name">

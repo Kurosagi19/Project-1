@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 align="center">Product List</h1>
-    <a href="?controller=product&action=create" class="btn btn-success mb-3">+ Add Product</a>
+    <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=create" class="btn btn-success mb-3">+ Add Product</a>
     <table class="table">
   <thead>
     <tr>
@@ -42,8 +42,8 @@
       }
       ?>
       <td><img src="Images/<?= $item['image'] ?>"></td>
-      <td><a href="?controller=product&action=edit&id=<?= $item['id'] ?>" class="btn btn-info">Edit</a></td>
-      <td><a onClick="confirm('Are you sure you want delete this product ?')" href="?controller=product&action=delete&id=<?= $item['id'] ?>" class="btn btn-danger">Delete</a></td>
+      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&id=<?= $item['id']; ?>" class="btn btn-info">Edit</a></td>
+      <td><a onClick="confirm('Are you sure you want to delete this product ?')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&id=<?= $item['id']; ?>" class="btn btn-danger">Delete</a></td>
     </tr>
     <?php $stt++; } ?>
   </tbody>

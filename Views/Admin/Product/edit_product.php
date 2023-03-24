@@ -15,8 +15,8 @@
     <h1 align="center">Edit Product</h1>
     <div class="container">
         <?php foreach($record as $item) { ?>
-    <form method="post" enctype="multipart/form-data" action="?controller=product&action=edit">
-    <div class="mb-3">
+        <form method="post" enctype="multipart/form-data" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=update">
+        <div class="mb-3">
         <label for="name" class="form-label">Product name: </label>
         <input type="text" class="form-control" id="name" name="name">
     </div>
