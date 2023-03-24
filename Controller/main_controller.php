@@ -25,6 +25,9 @@ if(!isset($_GET['controller'])) {
         case 'admin':
             require_once('Controller/Admin/admin_main_controller.php');
             break;
+        case 'login':
+            require_once('Login/login_controller.php');
+            break;
     }
 }
 ?>
