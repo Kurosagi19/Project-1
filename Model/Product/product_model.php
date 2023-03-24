@@ -19,8 +19,8 @@ function store() {
     }
     $image = $_FILES['image']['name'];
     $file_tmp = $_FILES['image']['tmp_name'];
-    $sql = "INSERT INTO product (name, price, image, quantity, featured, description) 
-    VALUES ('$name', $price, '$image', $quantity, $featured, '$description')";
+    $sql = "INSERT INTO product (name, price, quantity, description, featured, image)
+            VALUES ('$name', $price, $quantity, '$description', $featured, '$image')";
     mysqli_query($connect, $sql);
     move_uploaded_file($file_tmp, 'Images/'.$image);
     include_once('Config/close_connect.php');

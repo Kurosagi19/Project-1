@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Home</title>
-<link rel="stylesheet" href="../../CSS/bootstrap.css">
-<link rel="stylesheet" href="../../CSS/home.css">
-<script src="../../JS/jquery-3.3.1.js"></script>
-<script src="../../JS/bootstrap.js"></script>
+<link rel="stylesheet" href="CSS/bootstrap.css">
+<link rel="stylesheet" href="CSS/home.css">
+<script src="JS/jquery-3.3.1.js"></script>
+<script src="JS/bootstrap.js"></script>
 </head>
 <body>
 
@@ -47,7 +47,7 @@
                             <?php
                             foreach($arr['category'] as $item) {
                             ?>
-                            <li class="menu-item"><a href="#"><?= $item['name'] ?></a></li>
+                            <li class="menu-item"><a href="#"><?= $item['catname'] ?></a></li>
                             <?php } ?>
                             <!-- <li class="menu-item"><a href="#">Samsung</a></li>
                             <li class="menu-item"><a href="#">HTC</a></li>
