@@ -45,6 +45,22 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
     </div>
+    <div id="cart" class="col-lg-3 col-md-3 col-sm-12">
+            	<a class="mt-4 mr-2" href="?redirect=cart">Cart</a><span class="mt-3">
+                    <?php
+                    if(isset($_SESSION["cart"])){
+                        $totals = 0;
+                        foreach($arr['product'] as $prd_id=>$qtt){
+                            $totals++;
+                        }
+                        echo $totals;
+                    }
+                    else{
+                        echo 0;
+                    }
+                    ?>
+                </span>
+            </div>
   </div>
 </nav>
 <!-- End Navigator Bar -->
