@@ -12,7 +12,7 @@ switch($action) {
         require_once('Model/Client/Cart/cart_model.php');
         header('Location:index.php?redirect=cart');
         break;
-    case 'delete' : // Xóa sản phẩm trong giỏ hàng
+    case 'del' : // Xóa sản phẩm trong giỏ hàng
         require_once('Model/Client/Cart/cart_model.php');
         header('Location:index.php?redirect=cart');
         break;
