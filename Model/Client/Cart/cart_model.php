@@ -4,7 +4,7 @@ function view_cart() {
     $arr = array();
     $temp = array();
     include_once('Config/connect.php');
-    $cate = mysqli_query($connect, "SELECT * FROM category ORDER BY id ASC");
+    $cate = mysqli_query($connect, "SELECT * FROM category ORDER BY catid ASC");
     if(isset($_SESSION['cart'])) {
         foreach($_SESSION['cart'] as $prd_id => $value) {
             // Tìm bản ghi cần thêm vào giỏ hàng
@@ -61,12 +61,31 @@ function del_cart() {
         unset($_SESSION["cart"]);
     }
 }
+
+// Mua hàng
+function checkaccess() {
+    $fullname = $_POST['fullname'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $status = 1;
+    $shipid = 1;
+
+    $buydate = date('Y-m-d H:i:s');
+    require_once('Config/connect.php');
+    $sql_order = "INSERT INTO order(ship_id, status, fullname, phone, email, address, buydate) VALUES($shipid, $status, '$fullname', '$phone', '$email', '$address', '$buydate')";
+    $query_order = mysqli_query($connect, $sql_order);
+    require_once('Config/close_connect.php');
+    unset($_SESSION['cart']);
+}
+
 // Trả kết quả về Controller
 switch($action) {
     case '': $arr = view_cart(); break;
     case 'add': add_cart(); break;
     case 'update': update_cart(); break;
     case 'del': del_cart(); break;
+    case 'checkaccess': checkaccess(); break;
 
 }
 

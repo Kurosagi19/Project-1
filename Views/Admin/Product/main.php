@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 align="center">Product List</h1>
+    <a href="?controller=admin" class="btn btn-info">Home Page</a>
     <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=create" class="btn btn-success mb-3">+ Add Product</a>
     <table class="table">
   <thead>

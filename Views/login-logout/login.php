@@ -25,7 +25,7 @@ if(isset($_POST['sbm'])) {
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/bootstrap-table.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-<title>Online Laptop Store - Administrator</title>
+<title>TVS - Administrator</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@ if(isset($_POST['sbm'])) {
 		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading" align="center">
-                    <p><b>Online Laptop Store</b></p>
+                    <p><b>TVS</b></p>
                     <p>Administrator Login</p>
                 </div>
 				<div class="panel-body">
