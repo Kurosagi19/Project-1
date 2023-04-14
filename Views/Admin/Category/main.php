@@ -8,8 +8,9 @@
     <title>Category Management</title>
 </head>
 <body>
+    <a href="?controller=admin" class="btn btn-info">Home Page</a>
     <h1 align="center">Category List</h1>
-    <a href="?controller=category&action=create" class="btn btn-success mb-3">+ Add Category</a>
+    <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=create" class="btn btn-success mb-3">+ Add Category</a>
     <table class="table">
   <thead>
     <tr>
@@ -28,8 +29,8 @@
     <tr>
       <th scope="row"><?= $stt ?></th>
       <td><?= $item['catname']; ?></td>
-      <td><a href="?controller=category&action=edit&id=<?= $item['catid'] ?>" class="btn btn-info">Edit</a></td>
-      <td><a onClick="confirm('Are you sure you want delete this category ? Every product in this category will also be deleted !')" href="?controller=category&action=delete&id=<?= $item['catid'] ?>" class="btn btn-danger">Delete</a></td>
+      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&catid=<?= $item['catid'] ?>" class="btn btn-info">Edit</a></td>
+      <td><a onClick="confirm('Are you sure you want delete this category ? Every product in this category will also be deleted !')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>action=delete&catid=<?= $item['catid'] ?>" class="btn btn-danger">Delete</a></td>
     </tr>
     <?php $stt++; } ?>
   </tbody>

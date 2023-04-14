@@ -16,7 +16,7 @@
                     <h1>TV LAPTOP STORE</h1>
                 </div>
                 <div class="col-md-3 text-right">
-                    <a href="?controller=login&action=logout" class="btn btn-info">Đăng xuất</a>
+                    <a href="?controller=login&action=logout" class="btn btn-info">Logout</a>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <h2>Giao diện Content</h2>
+                <h2>Welcome Administrator</h2>
             </div>
         </div>
     </div>

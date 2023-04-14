@@ -15,15 +15,15 @@
     <h1 align="center">Edit Category</h1>
     <div class="container">
         <?php foreach($record as $item) { ?>
-    <form method="post" action="?controller=category&action=edit">
+    <form method="post" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit">
     <div class="mb-3">
         <label for="name" class="form-label">Category name: </label>
-        <input type="text" class="form-control" id="catname" name="catname">
+        <input type="text" class="form-control" id="catname" name="catname" value="<?= $item['catname'] ?>">
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-warning">Reset</button>
     </form>
-    <?php $stt++; } ?>
+    <?php } ?>
 </div>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
 </body>
