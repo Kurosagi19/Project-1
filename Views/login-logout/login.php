@@ -6,7 +6,6 @@ if(isset($_POST['sbm'])) {
     $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
     $query = mysqli_query($connect, $sql);
     $num = mysqli_num_rows($query);
-    // echo $username; echo $password; echo $num;
     if($num == 1) {
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;

@@ -71,11 +71,15 @@
         <div class="col-lg-2 col-md-6">
             <h4 class="text-white">Category</h4>
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Acer</a>
-                <a href="#" class="list-group-item list-group-item-action">Asus</a>
-                <a href="#" class="list-group-item list-group-item-action">HP</a>
-                <a href="#" class="list-group-item list-group-item-action">Dell</a>
-                <a href="#" class="list-group-item list-group-item-action disabled">Macbook</a>
+              <ul>
+                <?php
+                foreach($arr['category'] as $item) {
+                  ?>
+                  <li class="menu-item"><a href="#"><?= $item['catname'] ?></a></li>
+                  <?php
+                }
+                  ?>
+              </ul>
             </div>
         </div>
         <!-- End Category -->

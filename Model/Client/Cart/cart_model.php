@@ -22,7 +22,6 @@ function view_cart() {
             }
         }
     }
-    // 
     include_once('Config/close_connect.php');
     $arr['product'] = $temp;
     $arr['category'] = $cate;
@@ -73,7 +72,7 @@ function checkaccess() {
 
     $buydate = date('Y-m-d H:i:s');
     require_once('Config/connect.php');
-    $sql_order = "INSERT INTO order(ship_id, status, fullname, phone, email, address, buydate) VALUES($shipid, $status, '$fullname', '$phone', '$email', '$address', '$buydate')";
+    $sql_order = "INSERT INTO 'order' (ship_id, status, fullname, phone, email, address, buydate) VALUES($shipid, $status, '$fullname', '$phone', '$email', '$address', '$buydate')";
     $query_order = mysqli_query($connect, $sql_order);
     require_once('Config/close_connect.php');
     unset($_SESSION['cart']);

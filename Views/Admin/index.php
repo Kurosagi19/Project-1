@@ -29,6 +29,7 @@
                         Home Page
                     </a>
                     <a href="?controller=admin&redirect=user" class="list-group-item list-group-item-action">User Management</a>
+                    <a href="?controller=admin&redirect=category" class="list-group-item list-group-item-action">Category Management</a>
                     <a href="?controller=admin&redirect=product" class="list-group-item list-group-item-action">Product Management</a>
                     <a href="#" class="list-group-item list-group-item-action">Order Management</a>
                 </div>
