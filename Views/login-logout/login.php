@@ -53,7 +53,8 @@ if(isset($_POST['sbm'])) {
 									<input name="remember" type="checkbox" value="Remember Me">Remember
 								</label> -->
 							</div>
-							<button type="submit" class="btn btn-primary" name="sbm">Login</button>
+							<button type="submit" class="btn btn-success" name="sbm">Login</button>
+                            <button type="back" class="btn btn-danger" name="back" href="index.php">Go Back</button>
 						</fieldset>
 					</form>
 				</div>
