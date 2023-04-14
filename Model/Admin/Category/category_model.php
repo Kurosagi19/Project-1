@@ -1,8 +1,8 @@
 <?php
 function index() {
     include_once('Config/connect.php');
-    $sql = "SELECT * FROM category";
-    $record = mysqli_query($connect,$sql);
+    $sql = "SELECT * FROM category ORDER BY catid ASC";
+    $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
 }
@@ -27,7 +27,7 @@ function update() {
     $catname = $_POST['catname'];
     $sql = "UPDATE category SET catname = '$catname' WHERE catid = '$catid'";
     mysqli_query($connect, $sql);
-    include_once('Config/close_conenct.php');
+    include_once('Config/close_connect.php');
 }
 function delete() {
     $catid = $_GET['catid'];
