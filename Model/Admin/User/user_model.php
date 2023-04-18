@@ -46,11 +46,18 @@ function update() {
     include_once('Config/close_connect.php');
     return $record;
 }
+function destroy() {
+    $id = $_GET['id'];
+    include_once('Config/connect.php');
+    mysqli_query($connect, "DELETE FROM user WHERE id = '$id'");
+    include_once('Config/close_connect.php');
+}
 
 switch($action) {
     case '': $record = index(); break;
     case 'store': store(); break;
     case 'edit': $record = edit(); break;
     case 'update': update(); break;
+    case 'destroy': destroy(); break;
 }
 ?>
