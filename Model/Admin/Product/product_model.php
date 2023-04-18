@@ -42,6 +42,7 @@ function edit() {
     return $record;
 }
 function update() {
+    if(isset($_POST['sbm'])) {
     include_once('Config/connect.php');
     $id = $_POST['id'];
     $name = $_POST['name'];
@@ -71,6 +72,7 @@ function update() {
             WHERE id = '$id'";
     mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
+    }
 }
 function destroy() {
     $id = $_GET['id'];

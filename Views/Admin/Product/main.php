@@ -42,7 +42,7 @@
         echo '<td>Non-Featured</td>';
       }
       ?>
-      <td><img src="Images/<?= $item['image'] ?>"></td>
+      <td><img width="100" height="80" src="Images/<?= $item['image'] ?>"></td>
       <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&id=<?= $item['id']; ?>" class="btn btn-info">Edit</a></td>
       <td><a onClick="confirm('Are you sure you want to delete this product ?')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&id=<?= $item['id']; ?>" class="btn btn-danger">Delete</a></td>
     </tr>

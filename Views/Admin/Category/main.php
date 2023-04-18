@@ -29,8 +29,8 @@
     <tr>
       <th scope="row"><?= $stt ?></th>
       <td><?= $item['catname']; ?></td>
-      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&catid=<?= $item['catid'] ?>" class="btn btn-info">Edit</a></td>
-      <td><a onClick="confirm('Are you sure you want delete this category ? Every product in this category will also be deleted !')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>action=delete&catid=<?= $item['catid'] ?>" class="btn btn-danger">Delete</a></td>
+      <td><a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&id=<?= $item['id'] ?>" class="btn btn-info">Edit</a></td>
+      <td><a onClick="confirm('Are you sure you want delete this category ? Every product in this category will also be deleted !')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>action=delete&id=<?= $item['id'] ?>" class="btn btn-danger">Delete</a></td>
     </tr>
     <?php $stt++; } ?>
   </tbody>

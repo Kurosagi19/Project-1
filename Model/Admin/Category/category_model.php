@@ -1,7 +1,7 @@
 <?php
 function index() {
     include_once('Config/connect.php');
-    $sql = "SELECT * FROM category ORDER BY catid ASC";
+    $sql = "SELECT * FROM category ORDER BY id ASC";
     $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
@@ -14,25 +14,25 @@ function store() {
     include_once('Config/close_connect.php');
 }
 function edit() {
-    $catid = $_GET['catid'];
+    $id = $_GET['id'];
     include_once('Config/connect.php');
-    $sql = "SELECT * FROM category WHERE catid = '$catid'";
+    $sql = "SELECT * FROM category WHERE id = '$id'";
     $record = mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
     return $record;
 }
 function update() {
     include_once('Config/connect.php');
-    $catid = $_POST['catid'];
+    $id = $_POST['id'];
     $catname = $_POST['catname'];
-    $sql = "UPDATE category SET catname = '$catname' WHERE catid = '$catid'";
+    $sql = "UPDATE category SET catname = '$catname' WHERE id = '$id'";
     mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
 }
 function delete() {
-    $catid = $_GET['catid'];
+    $id = $_GET['catid'];
     include_once('Config/connect.php');
-    mysqli_query($connect, "DELETE FROM category WHERE catid = '$catid'");
+    mysqli_query($connect, "DELETE FROM category WHERE id = '$id'");
     include_once('Config/close_connect.php');
 }
 

@@ -41,7 +41,7 @@
     <label for="description" class="form-label">Product description: </label>
     <textarea name="description" id="description" cols="150" rows="10"><?= $item['description'] ?></textarea>
     </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button name="sbm" type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-warning">Reset</button>
     </form>
     <?php } ?>
