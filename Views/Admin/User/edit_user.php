@@ -30,7 +30,7 @@
     <input type="password" id="repassword" name="repassword" class="form-control" placeholder="Re-Password..." required>
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Update</button>
-  <button type="reset" name="reset" class="btn btn-danger">Reset</button>
+  <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=user">Go Back</a></button>
 </form>
 </div>
   

@@ -42,7 +42,7 @@
     <textarea name="description" id="description" cols="150" rows="10"><?= $item['description'] ?></textarea>
     </div>
         <button name="sbm" type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-warning">Reset</button>
+        <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=product">Go Back</a></button>
     </form>
     <?php } ?>
 </div>

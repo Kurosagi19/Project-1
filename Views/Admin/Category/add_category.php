@@ -16,7 +16,7 @@
         <input type="text" class="form-control" id="catname" name="catname">
     </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-warning">Reset</button>
+        <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=category">Go Back</a></button>
     </form>
 </div>
 </body>

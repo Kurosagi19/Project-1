@@ -5,16 +5,6 @@ function index() {
     include_once('Config/close_connect.php');
     return $record;
 }
-// function create() {
-//     include_once('Config/connect.php');
-//     $category = mysqli_query($connect, "SELECT * FROM category ORDER BY id DESC"); Lấy tên danh mục
-//     $nhasanxuat = mysqli_query($connect, "SELECT * FROM nhasanxuat ORDER BY id DESC"); Lấy tên nhà sản xuất
-//     include_once('Config/close_connect.php');
-//     $record = array(); Tạo một mảng với các thông tin danh mục, nhà sản xuất...
-//     $record['category'] = $category;
-//     $record['nhasanxuat'] = $nhasanxuat;
-//     return $record; Gán mảng cho hàm create()
-// }
 function store() {
     include_once('Config/connect.php');
     $name = $_POST['name'];
@@ -42,7 +32,6 @@ function edit() {
     return $record;
 }
 function update() {
-    if(isset($_POST['sbm'])) {
     include_once('Config/connect.php');
     $id = $_POST['id'];
     $name = $_POST['name'];
@@ -72,7 +61,6 @@ function update() {
             WHERE id = '$id'";
     mysqli_query($connect, $sql);
     include_once('Config/close_connect.php');
-    }
 }
 function destroy() {
     $id = $_GET['id'];

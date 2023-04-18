@@ -30,7 +30,7 @@ function update() {
     include_once('Config/close_connect.php');
 }
 function delete() {
-    $id = $_GET['catid'];
+    $id = $_GET['id'];
     include_once('Config/connect.php');
     mysqli_query($connect, "DELETE FROM category WHERE id = '$id'");
     include_once('Config/close_connect.php');
