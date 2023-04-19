@@ -20,7 +20,7 @@
 <div class="bg-dark">
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#ff9933">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#"><spand class="text-info">Testing</spand></a>
+  <a class="navbar-brand" href="#"><span style="color: black">ThanhVu Laptop Store</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,6 +79,9 @@
                                 <div class="carousel-item">
                                     <img src="Images/MacProm2.webp" class="d-block w-100" alt="...">
                                 </div>
+                                <div class="carousel-item">
+                                    <img src="Images/nitro5.jpg" class="d-block w-100" alt="...">
+                                </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -91,7 +94,26 @@
                         </div>
 
                         <!-- Product Card -->
-
+                        <div class="products">
+                            <h3>Featured</h3>
+                            <div class="product-list row">
+                            <?php
+                            foreach($arr['product'] as $item) {
+                            ?>
+                                <div class="col-lg-4 col-md-6 col-sm-12 mx-product">
+                                    <div class="product-item card text-center">
+                                        <a href="<?php  ?>">
+                                            <img src="Images/<?php  ?>">
+                                        </a>
+                                        <h4><a href="">Product Name:<?= $item['name'] ?></a></h4>
+                                        <p>Price:<?= $item['price'] ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                                ?>
+                            </div>
+                        </div>
                         <!-- End Product Card -->
                     </div>
                 </div>
