@@ -31,7 +31,7 @@
     <div>
         <label for="image" class="form-label">Product image: </label>
         <input type="file" class="form-control" id="image" name="image">
-        <img src="Images/<?= $item['image'] ?>">
+        <img width="200" height="200" src="Images/<?= $item['image'] ?>">
     </div>
     <div class="mb-3 form-check">
         <label class="form-label" for="featured">Featured</label>

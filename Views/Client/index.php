@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SSShop</title>
+        <title>TVS - ThanhVuLaptopStore</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
         <style>
             .category_hover:hover {
@@ -20,7 +20,7 @@
 <div class="bg-dark">
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:#ff9933">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#"><span style="color: black">ThanhVu Laptop Store</span></a>
+  <a class="navbar-brand" href="index.php"><span style="color: black">ThanhVu Laptop Store</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,7 +37,7 @@
         </li>
       </ul>
       <div id="cart" class="col-lg-3 col-md-3 col-sm-12">
-                <a class="mt-4 mr-2" href="#">Cart
+                <a class="mt-4 mr-2" href="?redirect=cart">Cart
                     <i class="fa-solid fa-cart-shopping cart-icon">
                     <span class="mt-3">1</span></i>
                 </a>
@@ -68,19 +68,19 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="Images/alienware.webp" class="d-block w-100" alt="...">
+                                    <img width="1200" height="630" src="Images/alienware.webp" class="d-100 w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/acer.jpg" class="d-block w-100" alt="...">
+                                    <img width="1200" height="630" src="Images/Carousel/ROG.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/rogstrix.jpg" class="d-block w-100" alt="...">
+                                    <img width="1200" height="630" src="Images/Carousel/LaptopGaming.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/MacProm2.webp" class="d-block w-100" alt="...">
+                                    <img width="1200" height="630" src="Images/Carousel/MacPro2016.jpg" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="Images/nitro5.jpg" class="d-block w-100" alt="...">
+                                    <img width="1200" height="630" src="Images/Carousel/AcerNitro5.jpg" class="d-block w-100" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -103,7 +103,7 @@
                                 <div class="col-lg-4 col-md-6 col-sm-12 mx-product">
                                     <div class="product-item card text-center">
                                         <a href="<?php  ?>">
-                                            <img src="Images/<?php  ?>">
+                                            <img width="100" height="100" src="Images/<?= $item['image'] ?>">
                                         </a>
                                         <h4><a href="">Product Name:<?= $item['name'] ?></a></h4>
                                         <p>Price:<?= $item['price'] ?></p>

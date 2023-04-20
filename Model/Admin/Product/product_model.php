@@ -1,9 +1,9 @@
 <?php
 function index() {
     include_once('Config/connect.php');
-    $record = mysqli_query($connect, "SELECT * FROM product ORDER BY id DESC");
+    $query = mysqli_query($connect, "SELECT * FROM product ORDER BY id DESC");
     include_once('Config/close_connect.php');
-    return $record;
+    return $query;
 }
 function store() {
     include_once('Config/connect.php');
@@ -27,9 +27,9 @@ function store() {
 function edit() {
     $id = $_GET['id'];
     include_once('Config/connect.php');
-    $record = mysqli_query($connect, "SELECT * FROM product WHERE id = '$id'");
+    $query = mysqli_query($connect, "SELECT * FROM product WHERE id = '$id'");
     include_once('Config/close_connect.php');
-    return $record;
+    return $query;
 }
 function update() {
     include_once('Config/connect.php');
@@ -70,7 +70,6 @@ function destroy() {
 }
 switch($action) {
     case '' : $record = index(); break;
-    // case 'create' : $record = create(); Truyền mảng sang view add
     case 'store' : store(); break;
     case 'edit' : $record = edit(); break;
     case 'update' : update(); break;
