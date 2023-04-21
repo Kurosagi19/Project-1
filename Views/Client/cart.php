@@ -43,9 +43,6 @@
         <li class="nav-item">
           <a class="nav-link" href="?controller=admin">Admin</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
       </ul>
       <div id="cart" class="col-lg-3 col-md-3 col-sm-12">
                 <a class="mt-4 mr-2" href="?redirect=cart">Cart
@@ -90,9 +87,9 @@
                         </ul>
                         </div>
                     </div>
-<!-- End Category -->
+                    <!-- End Category -->
 
-<!-- Carousel -->
+                    <!-- Carousel -->
                     <div class="col-lg-10 col-md-6 mt-3">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -121,10 +118,10 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-<!-- End Carousel -->
-<?php
-                    if(isset($_SESSION['cart'])) {
-                    ?>
+                        <!-- End Carousel -->
+                        <?php
+                        if(isset($_SESSION['cart'])) {
+                        ?>
                     <!--	Cart	-->
                     <div id="my-cart">
                         <div class="row">
@@ -183,6 +180,7 @@
                         </form>
                     <!--	End Customer Info	-->
 
+                    <!-- Buy Button -->
                     <div class="row">
                         <div class="by-now col-lg-6 col-md-6 col-sm-12">
                             <a href="#" onClick="buyNow()">
@@ -190,6 +188,7 @@
                             </a>
                         </div>
                     </div>
+                    <!-- End Buy Button -->
 
                     <?php }else {
                         echo '<div class="alert alert-danger mt-3">Your cart is empty ! Get outside and add some product !</div>';

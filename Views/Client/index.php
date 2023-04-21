@@ -32,9 +32,6 @@
         <li class="nav-item">
           <a class="nav-link" href="?controller=admin">Admin</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
       </ul>
       <div id="cart" class="col-lg-3 col-md-3 col-sm-12">
                 <a class="mt-4 mr-2" href="?redirect=cart">Cart
@@ -110,7 +107,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-<!-- End Carousel -->
+                        <!-- End Carousel -->
 
                         <!-- Product Card -->
                         <?php

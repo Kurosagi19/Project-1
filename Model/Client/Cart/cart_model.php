@@ -69,10 +69,10 @@ function checkaccess() {
     $address = $_POST['address'];
     $status = 1;
     $shipid = 1;
-    date_default_timezone_set('Asia/Bangkok');
-    $buydate = date('Y-m-d H:i:s');
+    // date_default_timezone_set('Asia/Bangkok');
+    // $buydate = date('Y-m-d H:i:s');
     require_once('Config/connect.php');
-    $sql_order = "INSERT INTO order(shipid, fullname, phone, email, address, status, buydate) VALUES($shipid, '$fullname', '$phone', '$email', '$address', $status, '$buydate')";
+    $sql_order = "INSERT INTO order(shipid, fullname, phone, email, address, status) VALUES($shipid, '$fullname', '$phone', '$email', '$address', $status)";
     $query_order = mysqli_query($connect, $sql_order);
     require_once('Config/close_connect.php');
     unset($_SESSION['cart']);
