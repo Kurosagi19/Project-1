@@ -28,6 +28,10 @@
         <label for="image" class="form-label">Product image: </label>
         <input type="file" class="form-control" id="image" name="image">
     </div>
+    <div>
+        <label for="catid" class="form-label">Category: </label>
+        <input type="text" class="form-control" id="catid" name="catid">
+    </div>
     <div class="mb-3 form-check">
         <label class="form-label" for="featured">Featured</label>
         <input type="checkbox" id="featured" name="featured">
@@ -36,7 +40,7 @@
     <label for="description" class="form-label">Product description: </label>
     <textarea name="description" id="description" cols="150" rows="10"></textarea>
     </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Add Product</button>
         <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=product">Go Back</a></button>
     </form>
 </div>

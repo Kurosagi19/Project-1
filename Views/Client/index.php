@@ -39,7 +39,21 @@
       <div id="cart" class="col-lg-3 col-md-3 col-sm-12">
                 <a class="mt-4 mr-2" href="?redirect=cart">Cart
                     <i class="fa-solid fa-cart-shopping cart-icon">
-                    <span class="mt-3">1</span></i>
+                    <span class="mt-3">
+                    <?php
+                        // Display product quantity using id
+                        if(isset($_SESSION["cart"])){
+                            $totals = 0;
+                            foreach($arr['product'] as $prd_id=>$qtt){
+                                $totals++;
+                            }
+                            echo $totals;
+                        }
+                        else{
+                            echo 0;
+                        }
+                        ?>
+                    </span></i>
                 </a>
             </div>
       <form class="d-flex" role="search">
@@ -50,6 +64,7 @@
   </div>
 </nav>
 <!-- End navbar -->
+<!-- Category -->
             <div class="container">
                 <div class="row ">
                     <div class="col-lg-2 col-md-6">
@@ -64,6 +79,9 @@
                         </ul>
                         </div>
                     </div>
+<!-- End Category -->
+
+<!-- Carousel -->
                     <div class="col-lg-10 col-md-6 mt-3">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -92,29 +110,22 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+<!-- End Carousel -->
 
                         <!-- Product Card -->
-                        <div class="products">
-                            <h3>Featured</h3>
-                            <div class="product-list row">
-                            <?php
-                            foreach($arr['product'] as $item) {
-                            ?>
-                                <div class="col-lg-4 col-md-6 col-sm-12 mx-product">
-                                    <div class="product-item card text-center">
-                                        <a href="<?php  ?>">
-                                            <img width="100" height="100" src="Images/<?= $item['image'] ?>">
-                                        </a>
-                                        <h4><a href="">Product Name:<?= $item['name'] ?></a></h4>
-                                        <p>Price:<?= $item['price'] ?></p>
-                                    </div>
-                                </div>
-                                <?php
+                        <?php
+                        if(isset($_GET['redirect'])) {
+                            $redirect = $_GET['redirect'];
+                            switch($redirect) {
+                                case 'product': include_once('Views/Client/product_detail.php'); break;
+                                case 'cart': include_once('Views/Client/cart.php'); break;
                             }
-                                ?>
-                            </div>
-                        </div>
+                        } else {
+                            include_once('Views/Client/dashboard.php');
+                        }
+                        ?>
                         <!-- End Product Card -->
+
                     </div>
                 </div>
             </div>

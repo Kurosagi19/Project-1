@@ -14,7 +14,9 @@
 <body>
     <h1 align="center">Edit Product</h1>
     <div class="container">
-        <?php foreach($record as $item) { ?>
+        <?php
+        foreach($record as $item) {
+        ?>
         <form method="post" enctype="multipart/form-data" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=update">
         <div class="mb-3">
         <label for="name" class="form-label">Product name: </label>
@@ -33,6 +35,10 @@
         <input type="file" class="form-control" id="image" name="image">
         <img width="200" height="200" src="Images/<?= $item['image'] ?>">
     </div>
+    <div>
+        <label for="catid" class="form-label">Category: </label>
+        <input type="text" class="form-control" id="catid" name="catid" value="<?= $item['catid'] ?>">
+    </div>
     <div class="mb-3 form-check">
         <label class="form-label" for="featured">Featured</label>
         <input type="checkbox" id="featured" name="featured" <?php if($item['featured'] == 1) { echo ''; } else { echo 'Not checked';} ?>>
@@ -41,12 +47,13 @@
     <label for="description" class="form-label">Product description: </label>
     <textarea name="description" id="description" cols="150" rows="10"><?= $item['description'] ?></textarea>
     </div>
-        <button name="sbm" type="submit" class="btn btn-primary">Submit</button>
+        <button name="update" type="submit" class="btn btn-primary">Update</button>
         <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=product">Go Back</a></button>
     </form>
-    <?php } ?>
+    <?php
+        }
+    ?>
 </div>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script> -->
 </body>
 <script>CKEDITOR.replace('description')</script>
 </html>

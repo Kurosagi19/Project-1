@@ -13,7 +13,11 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
-
+<script>
+    function buyNow() {
+        document.getElementById('buy-now').submit();
+    }
+</script>
 <body>
 
     <!--	Header	-->
@@ -67,7 +71,7 @@
                                 <?php
                                 foreach ($arr['category'] as $item) {
                                 ?>
-                                    <li class="menu-item"><a href="#"><?= $item['name'] ?></a></li>
+                                    <li class="menu-item"><a href="#"><?= $item['catname'] ?></a></li>
                                 <?php } ?>
                             </ul>
                         </div>
@@ -93,7 +97,7 @@
                             $total_price_all = 0;
                             foreach ($arr['product'] as $productID => $item) {
                                 $total_price = $item['amount'] * $item["price"];
-                                $total_price_all += $total_price; // Tính tổng tiền sản phẩm trong giỏ hành
+                                $total_price_all += $total_price; // Tính tổng tiền sản phẩm trong giỏ hàng
                             ?>
                                 <div class="cart-item row">
                                     <div class="cart-thumb col-lg-7 col-md-7 col-sm-12">
@@ -121,27 +125,28 @@
 
                     <!--	Customer Info	-->
                     <div id="customer">
-                        <form method="post">
+                        <form id="buy-now" method="post" action="?redirect=cart&action=checkaccess">
                             <div class="row">
 
                                 <div id="customer-name" class="col-lg-4 col-md-4 col-sm-12">
-                                    <input placeholder="Họ và tên (bắt buộc)" type="text" name="name" class="form-control" required>
+                                    <input placeholder="Họ và tên (bắt buộc)" type="text" name="fullname" class="form-control" required>
                                 </div>
                                 <div id="customer-phone" class="col-lg-4 col-md-4 col-sm-12">
                                     <input placeholder="Số điện thoại (bắt buộc)" type="text" name="phone" class="form-control" required>
                                 </div>
                                 <div id="customer-mail" class="col-lg-4 col-md-4 col-sm-12">
-                                    <input placeholder="Email (bắt buộc)" type="text" name="mail" class="form-control" required>
+                                    <input placeholder="Email (bắt buộc)" type="text" name="email" class="form-control" required>
                                 </div>
                                 <div id="customer-add" class="col-lg-12 col-md-12 col-sm-12">
-                                    <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="add" class="form-control" required>
+                                    <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="address" class="form-control" required>
                                 </div>
 
                             </div>
                         </form>
+                        
                         <div class="row">
                             <div class="by-now col-lg-6 col-md-6 col-sm-12">
-                                <a href="#">
+                                <a href="#" onClick="buyNow()">
                                     <b>Mua ngay</b>
                                     <span>Giao hàng tận nơi siêu tốc</span>
                                 </a>
@@ -186,47 +191,6 @@
         </div>
     </div>
     <!--	End Body	-->
-
-    <div id="footer-top">
-        <div class="container">
-            <div class="row">
-                <div id="logo-2" class="col-lg-3 col-md-6 col-sm-12">
-                    <h2><a href="#"><img src="images/logo.png" style="width:255px;"></a></h2>
-                    <p>
-                        Chương trình Học viện Công nghệ BKACAD, Đại học Bách Khoa Hà Nội tiền thân là Học viện mạng Cisco Bách Khoa được thành lập theo Quyết định số 4251/QĐ-ĐHBK-TTĐTSĐH do Hiệu trưởng trường ĐH Bách Khoa HN ký ngày 05/11/2004. Đây là Chương trinh hợp tác chính thức của Trường Đại học Bách khoa Hà Nội với Tập đoàn Cisco Systems.
-                    </p>
-                </div>
-                <div id="address" class="col-lg-3 col-md-6 col-sm-12">
-                    <h3>Địa chỉ</h3>
-                    <p>Tòa nhà A17 Bách Khoa, 17 Tạ Quang Bửu, Hai Bà Trưng, Hà Nội </p>
-                </div>
-                <div id="service" class="col-lg-3 col-md-6 col-sm-12">
-                    <h3>Dịch vụ</h3>
-                    <p>Bảo hành rơi vỡ, ngấm nước Care Diamond</p>
-                    <p>Bảo hành Care X60 rơi vỡ ngấm nước vẫn Đổi mới</p>
-                </div>
-                <div id="hotline" class="col-lg-3 col-md-6 col-sm-12">
-                    <h3>Hotline</h3>
-                    <p>Phone Sale: 024 6650 7260</p>
-                    <p>Website: bkacad.edu.vn</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--	Footer	-->
-    <div id="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <p>
-                        2023 © BKACAD Academy. All rights reserved. Developed by Hainp(Instrutor).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--	End Footer	-->
 </body>
 
 </html>

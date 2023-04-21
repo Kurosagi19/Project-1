@@ -53,7 +53,6 @@ if(isset($_POST['sbm'])) {
 								</label> -->
 							</div>
 							<button type="submit" class="btn btn-success" name="sbm">Login</button>
-                            <button type="back" class="btn btn-danger" name="back" href="index.php">Home</button>
 						</fieldset>
 					</form>
 				</div>
