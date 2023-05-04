@@ -42,7 +42,9 @@
             <option value="<?= $item['status'] = 3 ?>">Shipping</option>
       </select>
         </td>
-      <td><a onClick="confirm('This order will be delete and cannot be restore !')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&orderid=<?= $item['orderid']; ?>" class="btn btn-danger">Delete Order</a></td>
+      <td>
+        <a onClick="confirm('This order will be delete and cannot be restore !')" href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&orderid=<?= $item['orderid']; ?>" class="btn btn-danger">Delete Order</a>
+      </td>
     </tr>
     <?php $stt++; } ?>
   </tbody>

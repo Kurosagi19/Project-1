@@ -21,7 +21,7 @@
         <label for="name" class="form-label">Category name: </label>
         <input type="text" class="form-control" id="catname" name="catname" value="<?= $item['catname'] ?>">
     </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="update" class="btn btn-primary">Update</button>
         <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=category">Go Back</a></button>
     </form>
     <?php } ?>
