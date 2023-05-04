@@ -18,6 +18,7 @@
         foreach($record as $item) {
         ?>
         <form method="post" enctype="multipart/form-data" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=update">
+        <input type="hidden" name="id" value="<?= $item['id'] ?>">
         <div class="mb-3">
         <label for="name" class="form-label">Product name: </label>
         <input type="text" class="form-control" id="name" name="name" value="<?= $item['name'] ?>">
@@ -47,7 +48,7 @@
     <label for="description" class="form-label">Product description: </label>
     <textarea name="description" id="description" cols="150" rows="10"><?= $item['description'] ?></textarea>
     </div>
-        <button name="update" type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" name="update" class="btn btn-primary">Update</button>
         <button type="back" class="btn btn-warning"><a href="?controller=admin&redirect=product">Go Back</a></button>
     </form>
     <?php

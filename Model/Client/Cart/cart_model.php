@@ -62,6 +62,7 @@ function del_cart() {
 // Mua hàng
 function checkaccess() {
     $custname = $_POST['custname'];
+    $custid = 1;
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $address = $_POST['address'];
@@ -69,7 +70,7 @@ function checkaccess() {
     date_default_timezone_set('Asia/Bangkok');
     $buydate = date('Y-m-d H:i:s');
     require_once('Config/connect.php');
-    $sql_order = "INSERT INTO orders(custname, phone, email, address, status, buydate) VALUES('$custname', '$phone', '$email', '$address', $status, '$buydate')";
+    $sql_order = "INSERT INTO orders(custname, custid, phone, email, address, status, buydate) VALUES('$custname', $custid, '$phone', '$email', '$address', $status, '$buydate')";
     $query_order = mysqli_query($connect, $sql_order);
     require_once('Config/close_connect.php');
     unset($_SESSION['cart']);

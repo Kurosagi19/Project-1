@@ -16,6 +16,7 @@
     <div class="container">
         <?php foreach($record as $item) { ?>
     <form method="post" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit">
+    <input type="hidden" name="catid" value="<?= $item['catid'] ?>">
     <div class="mb-3">
         <label for="name" class="form-label">Category name: </label>
         <input type="text" class="form-control" id="catname" name="catname" value="<?= $item['catname'] ?>">

@@ -8,7 +8,7 @@
                 <a href="<?php  ?>">
                     <img width="130" height="100" href="?redirect=product&id=<?= $item['id'] ?>" src="Images/<?= $item['image'] ?>">
                 </a>
-                <h4><a href="?redirect=product&id=<?= $item['id'] ?>">Product Name:<?= $item['name'] ?></a></h4>
+                <h4><a href="?redirect=product&id=<?= $item['id'] ?>"><?= $item['name'] ?></a></h4>
                 <p>Price:<?= number_format($item['price']) ?></p>
             </div>
         </div>

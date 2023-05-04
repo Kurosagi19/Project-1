@@ -26,13 +26,11 @@ function store() {
     include_once('Config/close_connect.php');
 }
 function edit() {
-    if(isset($_GET['id'])) {
         $id = $_GET['id'];
         include_once('Config/connect.php');
         $query = mysqli_query($connect, "SELECT * FROM product WHERE id = '$id'");
         include_once('Config/close_connect.php');
         return $query;
-    }
 }
 function update() {
     include_once('Config/connect.php');
