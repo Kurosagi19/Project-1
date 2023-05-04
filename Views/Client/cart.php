@@ -145,7 +145,7 @@
                                     <div class="cart-quantity col-lg-2 col-md-2 col-sm-12">
                                         <input type="number" id="quantity" name="qtt[<?= $productID ?>]" class="form-control form-blue quantity" value="<?= $item['amount'] ?>" min="1" max="<?= $item['quantity'] ?>">
                                     </div>
-                                    <div class="cart-price col-lg-3 col-md-3 col-sm-12"><b><?= number_format($item['price']); ?>đ</b><a href="?redirect=cart&action=del&id=<?= $productID ?>">Xóa</a></div>
+                                    <div class="cart-price col-lg-3 col-md-3 col-sm-12"><b><?= number_format($item['price']); ?>VND</b><a href="?redirect=cart&action=del&id=<?= $productID ?>">Delete from Cart</a></div>
                                 </div>
                             <?php } ?>
                             <div class="row">
@@ -153,7 +153,7 @@
                                     <button id="update-cart" class="btn btn-success" type="submit" name="sbm">Update Cart</button>
                                 </div>
                                 <div class="cart-total col-lg-2 col-md-2 col-sm-12"><b>Total Cost:</b></div>
-                                <div class="cart-price col-lg-3 col-md-3 col-sm-12"><b><?= number_format($total_price_all); ?>đ</b></div>
+                                <div class="cart-price col-lg-3 col-md-3 col-sm-12"><b><?= number_format($total_price_all); ?>VND</b></div>
                             </div>
                         </form>
 

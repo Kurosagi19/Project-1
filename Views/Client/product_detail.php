@@ -20,7 +20,7 @@ foreach($arr['product'] as $item) {
                 ?>
                 
             </ul>
-            <div id="add-cart"><button class="btn btn-success"><a href="index.php?redirect=cart&action=add&id=<?= $item['id'] ?>">Add to cart</a></button></div>
+            <div id="add-cart"><button class="btn btn-outline-success"><a href="index.php?redirect=cart&action=add&id=<?= $item['id'] ?>">Add to cart</a></div>
         </div>
     </div>
     <div id="product-body" class="row">

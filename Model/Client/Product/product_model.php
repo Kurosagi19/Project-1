@@ -11,8 +11,16 @@ function index() {
     $arr['product'] = $query;
     return $arr;
 }
+// function prdCate() {
+//     include_once('Config/connect.php');
+//     $catid = $_GET['catid'];
+//     $query = mysqli_query($connect, "SELECT * FROM product WHERE catid = '$catid'");
+//     include_once('Config/close_connect.php');
+//     return $query;
+// }
 
 switch($redirect) {
     case 'product': $arr = index(); break;
+    // case 'prdCate': prdCate(); break;
 }
 ?>

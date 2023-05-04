@@ -71,7 +71,7 @@
                             <?php
                             foreach($arr['category'] as $item) {
                             ?>
-                            <li class="list-group-item"><a href="#"><?= $item['catname'] ?></a></li>
+                            <li class="list-group-item"><a href="index.php?controller=product&action=prdCate&catid=<?= $item['catid'] ?>"><?= $item['catname'] ?></a></li>
                             <?php } ?>
                         </ul>
                         </div>
