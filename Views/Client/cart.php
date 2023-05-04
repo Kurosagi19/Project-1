@@ -165,7 +165,7 @@
                         <form id="buy-now" method="post" action="?redirect=cart&action=checkaccess">
                             <div class="row">
                                 <div id="customer-name" class="col-lg-4 col-md-4 col-sm-12">
-                                    <input placeholder="Fullname" type="text" name="fullname" class="form-control" required>
+                                    <input placeholder="Fullname" type="text" name="custname" class="form-control" required>
                                 </div>
                                 <div id="customer-phone" class="col-lg-4 col-md-4 col-sm-12">
                                     <input placeholder="Phone number" type="text" name="phone" class="form-control" required>

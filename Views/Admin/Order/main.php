@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <th scope="row"><?= $stt ?></th>
-        <td><?= $item['fullname']; ?></td>
+        <td><?= $item['custname']; ?></td>
         <td><?= $item['phone']; ?></td>
         <td><?= $item['address']; ?></td>
         <td><?= $item['buydate']; ?></td>

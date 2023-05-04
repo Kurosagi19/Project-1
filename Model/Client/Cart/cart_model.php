@@ -54,8 +54,6 @@ function del_cart() {
     $prd_id = $_GET["id"];
     unset($_SESSION["cart"][$prd_id]);
     echo count($_SESSION["cart"]);
-    // die('abc');
-    // die;
     if(count($_SESSION["cart"]) == 0){
         unset($_SESSION["cart"]);
     }
@@ -63,7 +61,7 @@ function del_cart() {
 
 // Mua hàng
 function checkaccess() {
-    $fullname = $_POST['fullname'];
+    $custname = $_POST['custname'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $address = $_POST['address'];
@@ -71,7 +69,7 @@ function checkaccess() {
     date_default_timezone_set('Asia/Bangkok');
     $buydate = date('Y-m-d H:i:s');
     require_once('Config/connect.php');
-    $sql_order = "INSERT INTO orders(fullname, phone, email, address, status, buydate) VALUES('$fullname', '$phone', '$email', '$address', $status, '$buydate')";
+    $sql_order = "INSERT INTO orders(custname, phone, email, address, status, buydate) VALUES('$custname', '$phone', '$email', '$address', $status, '$buydate')";
     $query_order = mysqli_query($connect, $sql_order);
     require_once('Config/close_connect.php');
     unset($_SESSION['cart']);
